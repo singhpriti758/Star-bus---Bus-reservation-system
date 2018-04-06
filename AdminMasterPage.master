@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="AdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+#wn{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight:bold;
+    font-size:larger;
+}
+.active {
+    background-color: #4CAF50;
+}
+</style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <br />
+        <div style="margin-left:50px; margin-right:50px">
+   <ul>
+       <li id="wn">Star Bus</li>
+  <li><a id="lHome" runat="server" href="AdminHome.aspx" >Home</a></li>
+       <li><a href="TimeList.aspx" id="tl">Time List</a></li>
+       <li><a href="AdminHome.aspx" id="lReservations">All Reservations</a></li>
+       <li><a href="Users.aspx" id="cp">Users List</a></li>
+
+       <li><a href="Logout.aspx" runat="server" id="lLogout">Logout</a></li>
+      
+</ul>
+            <asp:Label ID="lblUser" runat="server" Text="" Font-Bold="true" Font-Size="Larger"></asp:Label>
+            </div>
+        <br /><br />
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

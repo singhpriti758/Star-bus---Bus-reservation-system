@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+       <!-- <link href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <script src="bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
+    <link href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css" rel="stylesheet" />-->
+    <script>
+        function redirectFun(id)
+        {
+            var lid = document.getElementById(id);
+            var hid = document.getElementById("lHome");
+            hid.removeAttribute("class");
+            lid.setAttribute("class", "active");
+            switch(id)
+            {
+                case "lStatus":
+                    window.location.href = '/Status.aspx';
+                    break;
+
+
+                default:
+                    window.location.href = '/index.aspx';
+            }
+        }
+    </script>
+    <style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#wn{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight:bold;
+    font-size:larger;
+}
+li a:hover {
+    background-color: #111;
+}
+
+</style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <br />
+        <div style="margin-left:50px; margin-right:50px">
+   <ul>
+        <li id="wn">Star Bus</li>
+  <li><a id="lHome" runat="server" href="index.aspx" class="active" >Home</a></li>
+  <li><a id="lStatus" href="Status.aspx">Status</a></li>
+  <li><a href="Search.aspx" id="lSreach">Search</a></li>
+       <li><a href="UserRegistration.aspx" id="lRegister">Register</a></li>
+</ul>
+            </div>
+        <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
